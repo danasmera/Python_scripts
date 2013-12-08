@@ -1,0 +1,25 @@
+#!/usr/bin/python -tt
+
+import os
+import sys
+import signal
+
+if len(sys.argv) > 1:
+   mypath = sys.argv[1]
+else:
+   mypath = os.getcwd()
+
+try:
+  if os.path.exists(mypath) and os.path.isdir(mypath):
+
+    for dp, dn , fn in os.walk(mypath):
+      for myfile in fn:
+        print os.path.join(dp, myfile)
+  else:
+        print "mypath not found or not a directory!"
+except KeyboardInterrupt:
+        sys.exit(0)
+#def signal_handler(signal, frame):
+#  sys.exit(0)
+#signal.signal(signal.SIGINT, signal_handler)
+#signal.pause()
