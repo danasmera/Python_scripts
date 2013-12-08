@@ -1,10 +1,13 @@
 #!/usr/bin/env python
+'''Copy difference of two directories to a new directory. Finds newly added or modified files in a directory by comparing to an older directory, and copies those files/directories to a new difference directory recursively.
+'''
 
 import os, sys
 import filecmp
 import re
 from distutils import dir_util
 import shutil
+#container for all newly added or modified files and directories
 holderlist=[]
 
 def compareme(dir1, dir2):
