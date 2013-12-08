@@ -1,4 +1,6 @@
 #!/usr/bin/python -tt
+'''list all files in a given directory. Listing shows absolute path of files'''
+'''Usage: listfiles /path/directory '''
 
 import os
 import sys
@@ -19,7 +21,3 @@ try:
         print "mypath not found or not a directory!"
 except KeyboardInterrupt:
         sys.exit(0)
-#def signal_handler(signal, frame):
-#  sys.exit(0)
-#signal.signal(signal.SIGINT, signal_handler)
-#signal.pause()
