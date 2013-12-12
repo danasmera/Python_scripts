@@ -5,7 +5,6 @@
 import os, sys
 import filecmp
 import re
-from distutils import dir_util
 import shutil
 #container for all newly added or modified files and directories
 holderlist=[]
