@@ -8,6 +8,7 @@ import os,sys
 import heapq
 
 maildomain=sys.argv[1]
+# Use dig command
 mycommand="dig +short " + maildomain + " mx"
 
 class PriorityQueue:
@@ -40,7 +41,7 @@ def main():
     print q.pop()
     total_mx-=1
 
-
+# Main
 if __name__=='__main__':
   main()
 
