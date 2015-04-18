@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+''' Similar to dig +trace except this script does not reply on name servers set on localhost '''
 import sys
 from random import choice
 import re
