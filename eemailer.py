@@ -1,5 +1,12 @@
 #!/usr/bin/env python
 
+''' Email client - can send through specific mail server, add attachment, TLS etc. '''
+__author__ = "Daniel T."
+__license__ = "GPL"
+__version__ = "0.1.0"
+__maintainer__ = "danasmera"
+__email__ = "daniel@danasmera.com"
+
 import optparse,sys,os
 import smtplib
 from email.MIMEMultipart import MIMEMultipart

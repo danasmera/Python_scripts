@@ -4,6 +4,12 @@
    This script uses PriorityQueue...Class was taken from Python Cookbook 3rd edition.
 '''
 
+__author__ = "Daniel T."
+__license__ = "GPL"
+__version__ = "0.1.0"
+__maintainer__ = "danasmera"
+__email__ = "daniel@danasmera.com"
+
 import os,sys
 import heapq
 

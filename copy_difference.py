@@ -4,6 +4,13 @@
    to an older directory, and copies those files/directories to a
    new difference directory recursively.
 '''
+
+__author__ = "Daniel T."
+__license__ = "GPL"
+__version__ = "0.1.0"
+__maintainer__ = "danasmera"
+__email__ = "daniel@danasmera.com"
+
 import os
 import sys
 import filecmp

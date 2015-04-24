@@ -1,5 +1,11 @@
 #!/usr/bin/env python
 ''' Similar to dig +trace except this script does not reply on name servers set on localhost '''
+__author__ = "Daniel T."
+__license__ = "GPL"
+__version__ = "0.1.0"
+__maintainer__ = "danasmera"
+__email__ = "daniel@danasmera.com"
+
 import sys
 from random import choice
 import re
