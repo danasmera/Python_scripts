@@ -19,6 +19,12 @@
     python /home/daniel/python/cookie_viewer.py $(find /home/daniel/ -type f -name 'cookies.sqlite' | head -1) /tmp/test.txt 
 '''
  
+__author__ = "Daniel T."
+__license__ = "GPL"
+__version__ = "0.1.0"
+__maintainer__ = "danasmera"
+__email__ = "daniel@danasmera.com"
+
 import sys
 import os
 from datetime import datetime
