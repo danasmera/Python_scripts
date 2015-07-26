@@ -16,6 +16,14 @@ import os
 import sys
 import heapq
 
+
+def Usage():
+    print "{0} {1}".format(sys.argv[0], 'FQDN')
+    sys.exit(1)
+
+if len(sys.argv) != 2:
+    Usage()
+
 maildomain = sys.argv[1]
 # Use dig command
 mycommand = "dig +short " + maildomain + " mx"
