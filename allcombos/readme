@@ -1,0 +1,6 @@
++ bin
+  - scramble
++ scramble
+  - main.py
+  + lib
+  + tests
