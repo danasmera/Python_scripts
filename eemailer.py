@@ -1,12 +1,5 @@
 #!/usr/bin/env python
 
-''' Email client - can send through specific mail server, add attachment, TLS etc. '''
-__author__ = "Daniel T."
-__license__ = "GPL"
-__version__ = "0.1.0"
-__maintainer__ = "danasmera"
-__email__ = "daniel@danasmera.com"
-
 import optparse
 import sys
 import os
@@ -20,8 +13,8 @@ from email import Encoders
 
 
 def main():
-    ''' Main function '''
-# All the options accepted by the script
+    ''' Email client - can send through specific mail server, add attachment, TLS etc. '''
+    # All the options accepted by the script
     usage_line='%prog -f env_from -t env_to -s subject -H smtp-host -F from -T to -r reply -R return-address, -d debug_level -p port_number, -D date, -e helo, -S tls, -a attach, -b body -c certificate -k privatekey'
     p = optparse.OptionParser(description='email client', prog='emailer',
                               version='0.1a', usage=usage_line)
@@ -167,4 +160,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())

@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+
 '''Usage: scriptname domain
    Output will list of MX records of domain sorted by MX,
    lowest MX value first, and highest Mx value last.
@@ -63,7 +64,7 @@ def main():
 
 # Main
 if __name__ == '__main__':
-    main()
+    sys.exit(main())
 
 '''Usage example
 [daniel@danasmera tmp]$ dig gmail.com mx +short

@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+
 '''extract a list of URLs from Firefox exported bookmars JSON file '''
 __author__ = "Daniel T."
 __license__ = "GPL"
@@ -34,9 +35,8 @@ except ValueError:
     print "{0} not valid JSON file".format(bookmark_file)
     sys.exit(1)
 fp_data.close()
+
 #Recursive function to get the title and URL keys from JSON file
-
-
 def grab_keys(bookmarks_data, bookmarks_list=[]):
     if 'children' in bookmarks_data:
         for item in bookmarks_data['children']:
@@ -54,4 +54,4 @@ def main():
             print item['uri'], "  ", item['title']
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
