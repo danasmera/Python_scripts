@@ -1,22 +1,19 @@
 #!/usr/bin/env python
-'''Copy difference of two directories to a new directory.
-   Finds newly added or modified files in a directory by comparing
-   to an older directory, and copies those files/directories to a
-   new difference directory recursively.
-'''
-
-__author__ = "Daniel T."
-__license__ = "GPL"
-__version__ = "0.1.0"
-__maintainer__ = "danasmera"
-__email__ = "daniel@danasmera.com"
 
 import os
 import sys
 import filecmp
 import re
 import shutil
-#container for all newly added or modified files and directories
+
+__author__ = "Daniel T."
+__license__ = "GPL"
+__version__ = "0.1.0"
+__maintainer__ = "danasmera"
+__email__ = "daniel@linuxfreelancer.com"
+
+
+# container for all newly added or modified files and directories
 holderlist = []
 
 
@@ -35,6 +32,11 @@ def compareme(dir1, dir2):
 
 
 def main():
+    """ Copy difference of two directories to a new directory.
+    Finds newly added or modified files in a directory by comparing
+    to an older directory, and copies those files/directories to a
+    new difference directory recursively.
+    """
     if len(sys.argv) > 3:
         dir1 = sys.argv[1]
         dir2 = sys.argv[2]
@@ -61,13 +63,13 @@ def main():
     for mydir in set(new_dirs_create):
         if not os.path.exists(mydir):
             os.makedirs(mydir)
-#copy files and directories to diff directory
+# Copy files and directories to diff directory
     copy_pair = zip(source_files, destination_files)
     for item in copy_pair:
         if os.path.isfile(item[0]):
             shutil.copyfile(item[0], item[1])
         elif os.path.isdir(item[0]):
             shutil.copytree(item[0], item[1])
-#Main
+# Main driver function
 if __name__ == '__main__':
-    main()
+    sys.exit(main())
