@@ -2,6 +2,7 @@
 
 import sys
 
+
 def main():
     """ Recursively list all files in S3 under your account """
     try:
