@@ -26,6 +26,13 @@ def only_ip(ippat, rrdata):
     if match:
         return match.group()
 
+def is_valid_hostname(hostname):
+    if len(hostname) > 255:
+        return False
+    if hostname[-1] == ".":
+        hostname = hostname[:-1] # strip exactly one dot from the right, if present
+    allowed = re.compile("(?!-)[A-Z\d-]{1,63}(?<!-)$", re.IGNORECASE)
+    return all(allowed.match(x) for x in hostname.split("."))
 
 def Usage():
     print('{} {}'.format(sys.argv[0],'FQDN RecordType[A|MX|TXT|NS|ANY]'))
@@ -38,6 +45,8 @@ def main():
     records_dict = {'A': 1, 'NS': 2, 'MX': 15, 'TXT': 16, 'ANY': 255}
     ARGC = len(sys.argv)
     if ARGC < 2:
+        Usage()
+    if sys.argv[1] in ('-h', '--help', '-help'):
         Usage()
     RRTYPE = 'A' if ARGC <= 2 else sys.argv[2].strip()
     RRTYPE = RRTYPE.upper()
@@ -56,6 +65,9 @@ def main():
     srootns = choice(rootns)
     # we will accept input such as google.com www.google.com. etc
     myhost = sys.argv[1]
+    if not is_valid_hostname(myhost):
+        print('{} is not a valid domain'.format(myhost))
+        Usage()
     cleaned_myhost = myhost.split('.')
     if not cleaned_myhost[-1].endswith('.'):
         cleaned_myhost.extend('.')
